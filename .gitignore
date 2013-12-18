@@ -1,0 +1,4 @@
+.netrwhist
+tmp/*
+~bundle/vundle
+bundle/**
