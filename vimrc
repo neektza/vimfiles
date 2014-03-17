@@ -34,9 +34,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'gkz/vim-ls'
-Bundle 'vim-scripts/yaifa.vim'
-Bundle 'mileszs/ack.vim'
-"Bundle 'rking/ag.vim'
+Bundle 'rking/ag.vim'
 
 " Syntax
 Bundle 'groenewege/vim-less'
@@ -48,6 +46,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'juvenn/mustache.vim'
+Bundle 'elixir-lang/vim-elixir'
 Bundle 'vim-scripts/nginx.vim'
 
 syntax on
@@ -179,7 +178,7 @@ map <f8> :%s/\s\+$//<cr>
 nnoremap <space> za
 
 " ack
-nnoremap <leader>a :Ack -i 
+nnoremap <leader>a :Ag -i 
 
 " fugitive (git)
 nnoremap <leader>gs :Gstatus<cr>
@@ -198,14 +197,14 @@ au Filetype nerdtree setlocal nolist
 " ctrlp
 let g:ctrlp_map = ''
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_open_new_file = 'v'
+let g:ctrlp_custom_ignore = { 'dir': 'node_modules$' }
 nnoremap <leader>f :CtrlP<cr>
 nnoremap <leader>m :CtrlPMRUFiles<cr>
 nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <f5> :CtrlPClearCache<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,.DS_Store
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'node_modules$',
-  \ }
+
 
 
 " Keys for ctags
@@ -247,6 +246,8 @@ if has("gui_running")
   nnoremap <D-z> u 
   nnoremap <D-S-z> <C-r>
 endif
+
+map <leader>jt <Esc>:%!json_xs -f json -t json-pretty<CR>
 
 if has('conceal')
 	if has('autocmd')
