@@ -48,6 +48,7 @@ Bundle 'vim-scripts/VimClojure'
 Bundle 'juvenn/mustache.vim'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'vim-scripts/nginx.vim'
+Bundle 'stephpy/vim-yaml'
 
 syntax on
 
@@ -231,9 +232,13 @@ vmap <leader>s :<c-U>%s/<c-r>=GetVisual()<cr>/
 " Markdown, disable folding
 let g:vim_markdown_folding_disabled=1
 
-" Various shortcuts
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :wq<cr>
+" Various shortcuts for fugitive
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gc :Gcommit<cr>
+
+" Other shortcuts
 inoremap jj <Esc>l
 inoremap kk <Esc>l
 
